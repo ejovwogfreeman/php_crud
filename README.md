@@ -28,7 +28,7 @@ This PHP project provides a basic implementation of CRUD (Create, Read, Update, 
 
 2. **Database Setup:**
 
-   - Configure your database credentials in the `config.php` file.
+   - Configure your database credentials in the `config/db.php` file.
    - Import the included SQL file (`database.sql`) to create the necessary table structure.
 
 3. **Usage:**
