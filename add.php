@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($_POST['content'])) {
         $contentErr = 'PLEASE ENTER BLOG CONTENT';
     } else {
-        $content = htmlspecialchars($_POST['title']);
+        $content = htmlspecialchars($_POST['content']);
     }
 
     if ($title !== '' && $content !== '') {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h4>ADD A POST</h4>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter blog title" name='title' value=<?php echo $title ?>>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter blog title" name='title' value="<?php echo $title ?>">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Content</label>

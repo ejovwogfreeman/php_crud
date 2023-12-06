@@ -33,11 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($_POST['content'])) {
         $contentErr = 'PLEASE ENTER BLOG CONTENT';
     } else {
-        $content = htmlspecialchars($_POST['title']);
+        $content = htmlspecialchars($_POST['content']);
     }
 
     if ($title !== '' && $content !== '') {
 
+        $id = $_POST['id'];
 
         $sql = "UPDATE blog SET blog_title = '$title', blog_content='$content', user_id='1' WHERE blog_id = '$id'";
 
@@ -74,11 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <h4>UPDATE BLOG POST</h4>
         <div class="mb-3">
-            <input type="text" hidden value=<?php echo $id ?>>
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter blog title" name='title' value=<?php echo $title ?>>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter blog title" name='title' value="<?php echo $title ?>">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Content</label>

@@ -6,7 +6,9 @@ $sql = "SELECT * FROM blog";
 
 $sql_query = mysqli_query($conn, $sql);
 
-$blogs = mysqli_fetch_all($sql_query, MYSQLI_ASSOC);
+$blogs_from_db = mysqli_fetch_all($sql_query, MYSQLI_ASSOC);
+
+$blogs = array_reverse($blogs_from_db);
 
 ?>
 
